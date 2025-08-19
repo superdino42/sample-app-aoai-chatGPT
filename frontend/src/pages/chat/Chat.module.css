@@ -370,6 +370,25 @@ a {
   border-radius: 4px;
 }
 
+.newChatIcon,
+.clearChatBroom,
+.clearChatBroomNoCosmos,
+.stopGeneratingContainer {
+  display: none !important;
+}
+
+.chatEmptyStateTitle {
+  margin: 0 0 0px;
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #0ea5a6, #4361ee 55%, #7c3aed);  /* teal → indigo → iris */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
 @media (max-width: 480px) {
   .chatInput {
     width: 90%;
