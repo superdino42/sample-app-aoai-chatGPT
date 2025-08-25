@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://sampleappaoaichatgpt.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_5c0dc967c3dc4ba7a4570da6c71f998d }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_fa392b0956894b26bcbd7a50fae61489 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_9067b957fe3c4f699d43eadff2813bd5 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_d934f247cd0b4b8e94a933e834443ebd }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: sampleappaoaichatgpt.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_5c0dc967c3dc4ba7a4570da6c71f998d }}/sample-app-aoai-chatgpt:${{ github.sha }}
+        tags: sampleappaoaichatgpt.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_9067b957fe3c4f699d43eadff2813bd5 }}/sample-app-aoai-chatgpt:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'AnemiaDev'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_cb374d76ead644169198970ab46134f4 }}
-        images: 'sampleappaoaichatgpt.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_5c0dc967c3dc4ba7a4570da6c71f998d }}/sample-app-aoai-chatgpt:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_317ea6e5ee764cd3bab8b9e71224e457 }}
+        images: 'sampleappaoaichatgpt.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_9067b957fe3c4f699d43eadff2813bd5 }}/sample-app-aoai-chatgpt:${{ github.sha }}'
